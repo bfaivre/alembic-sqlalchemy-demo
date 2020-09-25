@@ -5,12 +5,11 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from models import Fv, Gravity
 
-engine = create_engine("mysql://root:root@localhost/Demo")
-connection = engine.connect()
-connection.execute(f"CREATE DATABASE IF NOT EXISTS Demo")
+# engine = create_engine("mysql://root:root@localhost/Demo")
+# connection = engine.connect()
 
-Session = sessionmaker(bind = engine)
-session = Session()
+# Session = sessionmaker(bind = engine)
+# session = Session()
 
 # for n in range(1, 10):
 #     fv = Fv(Name = f"FV0{n}")
@@ -31,6 +30,6 @@ session = Session()
 # for gravity in fv01.Gravities.order_by(Gravity.Timestamp.desc()).all():
 #     print(f"Timestamp: {gravity.Timestamp}, Gravity: {gravity.Gravity}")
 
-print(session.query(Fv))
-print("--------------------------------------------------------------------------------")
-print(session.query(Fv).filter_by(Name = "FV01"))
+# print(session.query(Fv))
+# print("--------------------------------------------------------------------------------")
+# print(session.query(Fv).filter_by(Name = "FV01"))

@@ -1,10 +1,8 @@
 from sqlalchemy import create_engine
 from sqlalchemy.ext.automap import automap_base
-from sqlalchemy.orm import Session
 
-# Create an engine and session.
+# Create an engine.
 engine = create_engine("mysql://root:root@localhost/Demo")
-session = Session(engine)
 
 # Modify the names of the relationship collections. 
 def _name_for_collection_relationship(base, local_cls, referred_cls, constraint):
