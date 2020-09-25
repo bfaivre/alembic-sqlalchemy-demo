@@ -19,10 +19,15 @@ session = Session()
 
 # session.commit()
 
-for fv in session.query(Fv).all():
-    for n in range (0, 101):
-        gravityReading = random.randint(10, 17)
-        gravity = Gravity(FvId = fv.FvId, Gravity = gravityReading, Timestamp = datetime.now() - relativedelta(days = n))
-        session.add(gravity)
+# for fv in session.query(Fv).all():
+#     for n in range (0, 101):
+#         gravityReading = random.randint(10, 17)
+#         gravity = Gravity(FvId = fv.FvId, Gravity = gravityReading, Timestamp = datetime.now() - relativedelta(days = n))
+#         session.add(gravity)
 
-session.commit()
+# session.commit()
+
+fv01 = session.query(Fv).filter_by(Name = "FV01").one()
+for gravity in fv01.Gravities.order_by(Gravity.Timestamp.desc()).all():
+    print(f"Timestamp: {gravity.Timestamp}, Gravity: {gravity.Gravity}")
+
