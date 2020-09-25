@@ -14,3 +14,4 @@ class Fv(Base):
 
     FvId = Column(Integer, primary_key = True)
     Name = Column(String(45), nullable = False)
+    Volume = Column(Integer, nullable = True)
