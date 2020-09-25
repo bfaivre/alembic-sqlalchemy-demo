@@ -27,7 +27,10 @@ session = Session()
 
 # session.commit()
 
-fv01 = session.query(Fv).filter_by(Name = "FV01").one()
-for gravity in fv01.Gravities.order_by(Gravity.Timestamp.desc()).all():
-    print(f"Timestamp: {gravity.Timestamp}, Gravity: {gravity.Gravity}")
+# fv01 = session.query(Fv).filter_by(Name = "FV01").one()
+# for gravity in fv01.Gravities.order_by(Gravity.Timestamp.desc()).all():
+#     print(f"Timestamp: {gravity.Timestamp}, Gravity: {gravity.Gravity}")
 
+print(session.query(Fv))
+print("--------------------------------------------------------------------------------")
+print(session.query(Fv).filter_by(Name = "FV01"))
