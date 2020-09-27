@@ -118,7 +118,7 @@ target_metadata = models.Base.metadata
 (venv) $ alembic upgrade head
 ```
 
-19. At this point the database "Demo" should now contain a table for "Fv", "Gravity" and "alembic_version". Now you can modify and run demo.py and demoReflection.py as simple examples:
+19. At this point the database "Demo" should now contain a table for "Fv", "Gravity" and "alembic_version". Now you can modify and run demo.py to show some simple examples and demoReflection.py to demonstrate the use of SQLAlchemy if you don't have a models file that you've been maintaining for a database that you'd like to manipulate using SQLAlchemy and Python:
 
 ```
 (venv) $ python demo.py
