@@ -1,11 +1,15 @@
+import os
 import random
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
+from dotenv import load_dotenv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from models import Fv, Gravity
 
-engine = create_engine("mysql://root:root@localhost/Demo")
+basedir = os.path.abspath(os.path.dirname(__file__))
+load_dotenv(os.path.join(basedir, ".env"))
+engine = create_engine(f'mysql://{os.environ.get("USER")}:{os.environ.get("PASSWORD")}@{os.environ.get("SERVER")}/{os.environ.get("DATABASE")}')
 connection = engine.connect()
 
 Session = sessionmaker(bind = engine)

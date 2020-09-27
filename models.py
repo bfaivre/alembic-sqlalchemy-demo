@@ -16,11 +16,11 @@ class Fv(Base):
     Name = Column(String(45), nullable = False)
     Volume = Column(Integer, nullable = True)
 
-    Gravities = relationship("Gravity", backref = "FV", lazy = "dynamic")
+    # Gravities = relationship("Gravity", backref = "FV", lazy = "dynamic")
 
-class Gravity(Base):
-    __tablename__ = "Gravity"
-    GravityId = Column(Integer, primary_key = True)
-    FvId = Column(Integer, ForeignKey("Fv.FvId"), nullable = False) 
-    Gravity = Column(Float, nullable = False)
-    Timestamp = Column(DATETIME(fsp = 6), nullable = False)
+# class Gravity(Base):
+#     __tablename__ = "Gravity"
+#     GravityId = Column(Integer, primary_key = True)
+#     FvId = Column(Integer, ForeignKey("Fv.FvId"), nullable = False) 
+#     Gravity = Column(Float, nullable = False)
+#     Timestamp = Column(DATETIME(fsp = 6), nullable = False)
